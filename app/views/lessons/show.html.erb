@@ -3,8 +3,10 @@
 <p><%= @lesson.description %></p>
 
 
-<%= link_to "Edit", edit_lesson_path %>
+<button class='btn btn-info'><%= link_to "Edit", edit_lesson_path %></button>
 <%= link_to "Delete", lesson_path(@lesson),
                       :data => {:confirm => "You sure?",
                                 :method => 'delete'}%>
 <%= link_to "Back", lessons_path %>
+
+<%= link_to "Next lesson", lesson_path(@lesson.next) %>
