@@ -9,4 +9,8 @@
                                 :method => 'delete'}%>
 <%= link_to "Back", lessons_path %>
 
-<%= link_to "Next lesson", lesson_path(@lesson.next) %>
+<% content_for(:navbar) do %>
+  <%= link_to "Next lesson", lesson_path(@lesson.next) %>
+
+  
+<% end %>

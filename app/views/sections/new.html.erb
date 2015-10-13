@@ -1,0 +1,12 @@
+<h1> Create a new section </h1>
+
+<% if @section.errors.any? %>
+<h3>Please fix these errors:</h3>
+<ul>
+  <% @section.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= render 'form' %>

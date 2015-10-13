@@ -11,8 +11,7 @@
   <%= flash[:notice] %>
   <%= yield %>
   <div class='navbar navbar-default navbar-fixed-bottom'>
-    <a href="/">Previous lesson</a>
-
+    <%= yield(:navbar) %>
     <a class='pull-right' href="etc">Section Contents</a>
     <a class='pull-right' href="etc">Table Contents</a>
   </div>
