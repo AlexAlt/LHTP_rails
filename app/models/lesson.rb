@@ -6,10 +6,10 @@ class Lesson < ActiveRecord::Base
 
 
   def next
-    if (self == Lesson.last)
-      Lesson.first
+    if (self == self.section.lessons.last)
+      self.section.lessons.first
     else
-      next_lesson = Lesson.where("number > (?)", self.number).first
+      return self.section.lessons.where("number > (?)", self.number).first
     end
   end
 end

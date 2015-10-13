@@ -10,7 +10,7 @@
 <%= link_to "Back", section_lessons_path %>
 
 <% content_for(:navbar) do %>
-  <%= link_to "Next lesson", section_lessons_path(@lesson.next) %>
+  <%= link_to "Next lesson", section_lesson_path(@section, @lesson.next) %>
 
 
 <% end %>
