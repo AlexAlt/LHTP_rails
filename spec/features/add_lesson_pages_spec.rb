@@ -9,9 +9,3 @@ describe "the add a lesson process" do
     expect(page).to have_content 'Lessons'
   end
 end
-
-  # it "gives error when no name is entered" do
-  #   visit new_list_path
-  #   click_on 'Create List'
-  #   expect(page).to have_content 'errors'
-  # end
