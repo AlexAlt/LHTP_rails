@@ -15,3 +15,12 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.pull-right, .pull-left {
+  padding: 2%;
+}
+
+
+a:hover {
+  text-decoration: none;
+}

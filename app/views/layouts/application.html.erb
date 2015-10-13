@@ -7,13 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= flash[:alert] %>
-  <%= flash[:notice] %>
-  <%= yield %>
-  <div class='navbar navbar-default navbar-fixed-bottom'>
-    <%= yield(:navbar) %>
-    <a class='pull-right' href="etc">Section Contents</a>
-    <a class='pull-right' href="etc">Table Contents</a>
+  <div class="container">
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+    <%= yield %>
+    <div class='navbar navbar-default navbar-fixed-bottom'>
+      <%= yield(:navbar) %>
+      <a class='pull-right' href="/sections">Table Contents</a>
+    </div>
   </div>
 
 

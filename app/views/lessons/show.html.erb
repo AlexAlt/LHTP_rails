@@ -3,14 +3,14 @@
 <p><%= @lesson.description %></p>
 
 
-<button class='btn btn-info'><%= link_to "Edit", edit_section_lesson_path %></button>
-<%= link_to "Delete", section_lesson_path(@section, @lesson),
-                      :data => {:confirm => "You sure?",
-                                :method => 'delete'}%>
 <%= link_to "Back", section_lessons_path %>
 
 <% content_for(:navbar) do %>
-  <%= link_to "Next lesson", section_lesson_path(@section, @lesson.next) %>
+  <p class="pull-left"><%= link_to "Next lesson", section_lesson_path(@section, @lesson.next) %></p>
+  <p class="pull-left"><%= link_to "Edit", edit_section_lesson_path %></p>
+    <p class="pull-left"><%= link_to "Delete", section_lesson_path(@section, @lesson),
+  :data => {:confirm => "You sure?",
+    :method => 'delete'}%></p>
 
 
 <% end %>
