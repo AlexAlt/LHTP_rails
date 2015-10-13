@@ -1,0 +1,19 @@
+<h2><%= @section.name %> - Section Number</h2>
+
+<% if @section.lessons.any? %>
+  <ul>
+    <% @section.lessons.each do |lesson| %>
+      <li><%= link_to lesson.name, section_lesson_path(@section, lesson) %></li>
+      <% end %>
+  </ul>
+<% else %>
+  <h3> No lessons yet</h3>
+<% end %>
+
+
+<button class='btn btn-info'><%= link_to "Edit", edit_section_path %></button>
+<%= link_to "Delete", section_path(@section),
+:data => {:confirm => "You sure?",
+  :method => 'delete'}%>
+  <%= link_to "Back", sections_path %>
+  <%= link_to "Add a Lesson", new_section_lesson_path(@section) %>

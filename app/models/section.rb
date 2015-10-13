@@ -1,5 +1,5 @@
 class Section < ActiveRecord::Base
-  has_many :lesson
+  has_many :lessons
   validates :name, :presence => true
 
 end

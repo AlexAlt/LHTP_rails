@@ -1,6 +1,6 @@
 
 
-<%= form_for @lesson do |f| %>
+<%= form_for [@section, @lesson] do |f| %>
 <%= f.label :name %>
 <%= f.text_area :name %>
 <%= f.label :description %>

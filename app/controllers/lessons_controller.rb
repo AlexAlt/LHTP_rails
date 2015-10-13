@@ -1,10 +1,9 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
-    render :index
   end
 
   def show
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     render :show
   end
@@ -12,19 +11,21 @@ class LessonsController < ApplicationController
   def destroy
     @lesson = Lesson.find(params[:id])
     @lesson.destroy
-    redirect_to lessons_path
+    redirect_to sections_path
   end
 
   def new
-    @lesson = Lesson.new
+    @section = Section.find(params[:section_id])
+    @lesson = @section.lessons.new
     render :new
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    @section = Section.find(params[:section_id])
+    @lesson = @section.lessons.new(lesson_params)
     if @lesson.save
       flash[:notice] = "You did it!! Lesson added."
-      redirect_to lessons_path
+      redirect_to sections_path(@lesson.section)
     else
       render :new
     end
@@ -38,7 +39,7 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      redirect_to lesson_path
+      redirect_to sections_path(@lesson.section)
     else
       render :edit
     end
